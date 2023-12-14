@@ -1,0 +1,87 @@
+.demo-container {
+    width: 800px;
+}
+
+.demo-container .function-section {
+    padding: 8px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+}
+
+.demo-container .function-section.init {
+    background-color: #aaeeaa;
+}
+
+.demo-container .function-section.teardown {
+    background-color: #eeaaaa;
+}
+
+.demo-container .function-section .buttons {
+    display: flex;
+    flex-direction: row;
+}
+
+.demo-container .function-section .buttons .btn {
+    border: 1px solid gray;
+    padding: 8px 16px;
+    margin: 0 8px;
+    border-radius: 8px;
+}
+
+.demo-container .function-section .buttons .btn:not(.disabled) {
+    cursor: pointer;
+}
+
+.demo-container .function-section .buttons .btn.disabled {
+    user-select: none;
+}
+
+.demo-container .function-section.init .buttons .btn:not(.disabled) {
+    background-color: #9999ee;
+}
+
+.demo-container .function-section.init .buttons .btn.disabled {
+    background-color: #999999;
+}
+
+.demo-container .function-section.init .buttons .btn:not(.disabled):hover {
+    background-color: #5555dd;
+}
+
+.demo-container .function-section.teardown .buttons .btn:not(.disabled) {
+    background-color: #ee9999;
+}
+
+.demo-container .function-section.teardown .buttons .btn.disabled {
+    background-color: #999999;
+}
+
+.demo-container .function-section.teardown .buttons .btn:not(.disabled):hover {
+    background-color: #dd5555;
+}
+
+.console {
+    margin-top: 8px;
+    background-color: #444;
+    border-radius: 12px;
+    border: 2px solid gray;
+    padding: 8px 12px;
+    font-family: monospace;
+    min-height: 80px;
+    max-height: 400px;
+    overflow-y: scroll;
+}
+
+.console p {
+    padding: 0;
+    margin: 0;
+}
+
+.console .msg {
+    color: rgb(183, 172, 243);
+}
+
+.console .err-msg {
+    color: rgb(214, 112, 99);
+}

@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+    <head>
+        <title>emscripten-worker-leak-demo</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="demo-container">
+            <h1>emscripten-worker-leak-demo</h1>
+            <p>
+                The <i>startup</i> buttons below do as follows:
+            </p>
+            <ul>
+                <li><b>Load Script:</b> Loads the Emscripten-generated JavaScript script file</li>
+                <li><b>Bootstrap Module:</b> Runs the Emscripten-generated module bootstrapping function DemoModule()</li>
+                <li><b>Initialize Heavy Object:</b> Creates a large object. That's it.</li>
+                <li><b>Run:</b> Queries the size of the large object, and prints the result to the console.</li>
+            </ul>
+            <p>
+                The <i>shutdown</i> buttons do as follows:
+            </p>
+            <ul>
+                <li><b>Delete Heavy Object:</b> Destroys the large, heavy object. That's it.</li>
+                <li><b>Destroy Module Reference:</b> Removes the reference to the Emscripten-generated module.</li>
+                <li><b>Unload Script:</b> Removes the Emscripten-generated JavaScript script file from the document. <i>This isn't really important or impactful, but I included it anyways.</i></li>
+            </ul>
+            <div class="init function-section">
+                <b>Setup</b>
+                <div class="firstrow">
+                    <input type="checkbox" id="mt-checkbox" checked>
+                    <label for="mt-checkbox">Multithreaded?</label>
+                </div>
+                <div class="buttons">
+                    <div class="btn disabled" id="load-script">Load Script</div>
+                    <div class="btn disabled" id="bootstrap-module">Bootstrap Module</div>
+                    <div class="btn disabled" id="init-heavy-obj">Initialize Heavy Object</div>
+                    <div class="btn disabled" id="run">Run</div>
+                </div>
+            </div>
+            <div class="teardown function-section">
+                <b>Teardown</b>
+                <div class="buttons">
+                    <div class="btn disabled" id="destroy-heavy-object">Delete Heavy Object</div>
+                    <div class="btn disabled" id="remove-module-reference">Destroy Module Reference</div>
+                    <div class="btn disabled" id="unload-script">Unload Script</div>
+                </div>
+            </div>
+            <div id="console" class="console"></div>
+        </div>
+        <script src="demo.js"></script>
+    </body>
+</html>
