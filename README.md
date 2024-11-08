@@ -44,5 +44,5 @@ emcc -sWASM -sMODULARIZE -sENVIRONMENT="web,worker" -sALLOW_MEMORY_GROWTH -sEXIT
 3. Next, invoke `emcc` for the _multi-threaded_ build:
 
 ```bash
-emcc -sWASM -sMODULARIZE -sENVIRONMENT="web,worker" -sALLOW_MEMORY_GROWTH -sEXIT_RUNTIME=0 -sFILESYSTEM=0 -sEXPORT_NAME="HeavyObjectDemoModuleMT" -sUSE_PTHREADS -sPTHREAD_POOL_SIZE=4 -sASSERTIONS=0 -sRUNTIME_DEBUG=0 --no-entry --bind -pthread sample.cc -o builds/sample-multi-threaded.js
+emcc -sWASM -sMODULARIZE -sENVIRONMENT="web,worker" -sALLOW_MEMORY_GROWTH -sEXIT_RUNTIME=0 -sFILESYSTEM=0 -sEXPORT_NAME="HeavyObjectDemoModuleMT" -sEXPORTED_RUNTIME_METHODS=PThread -sUSE_PTHREADS -sPTHREAD_POOL_SIZE=4 -sASSERTIONS=0 -sRUNTIME_DEBUG=0 --no-entry --bind -pthread sample.cc -o builds/sample-multi-threaded.js
 ```

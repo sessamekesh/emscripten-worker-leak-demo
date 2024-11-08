@@ -6,7 +6,7 @@ using namespace emscripten;
 
 class HeavyObject {
  public:
-  HeavyObject() { val_.resize(10000000, 'a'); }
+  HeavyObject() { val_.resize(/* 50 decimal megabytes */ 500000000, 'a'); }
   ~HeavyObject() = default;
 
   int len() const { return val_.size(); }
